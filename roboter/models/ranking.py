@@ -20,7 +20,6 @@ class CsvModel(object):
         if not os.path.exists(csv_file):
             pathlib.Path(csv_file).touch()
 
-
 class RankingModel(CsvModel):
     """Definition of class that generates ranking model to write to CSV"""
     def __init__(self, csv_file=None, *args, **kwargs):
@@ -30,7 +29,7 @@ class RankingModel(CsvModel):
         self.column = [RANKING_COLUMN_NAME, RANKING_COLUMN_COUNT]
         self.data = collections.defaultdict(int)
         self.load_data()
-
+    
     def get_csv_file_path(self):
         """Set csv file path.
 
@@ -47,7 +46,7 @@ class RankingModel(CsvModel):
         if not csv_file_path:
             csv_file_path = RANKING_CSV_FILE_PATH
         return csv_file_path
-
+    
     def load_data(self):
         """Load csv data.
 

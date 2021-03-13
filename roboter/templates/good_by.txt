@@ -1,5 +1,2 @@
-$robot_name: $user_nameさん。ありがとうございました。
-$robot_name: thank you so much, $user_name!
-
-良い一日を！さようなら
-Have a good day!
+$user_nameさん。ありがとうございました。
+$user_name, thank you so much.

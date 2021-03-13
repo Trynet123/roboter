@@ -10,7 +10,7 @@ class Robot(object):
     """Base model for Robot."""
 
     def __init__(self, name=DEFAULT_ROBOT_NAME, user_name='',
-                 speak_color='green'):
+                speak_color='green'):
         self.name = name
         self.user_name = user_name
         self.speak_color = speak_color
@@ -25,7 +25,6 @@ class Robot(object):
             if user_name:
                 self.user_name = user_name.title()
                 break
-
 
 class RestaurantRobot(Robot):
     """Handle data model on restaurant."""
@@ -44,11 +43,11 @@ class RestaurantRobot(Robot):
 
     @_hello_decorator
     def recommend_restaurant(self):
-        """Show restaurant recommended restaurant to the user."""
+        """Show restaurant recomended restaurant to the user."""
         new_recommend_restaurant = self.ranking_model.get_most_popular()
         if not new_recommend_restaurant:
             return None
-
+        
         will_recommend_restaurants = [new_recommend_restaurant]
         while True:
             template = console.get_template('greeting.txt', self.speak_color)
@@ -67,7 +66,7 @@ class RestaurantRobot(Robot):
                 if not new_recommend_restaurant:
                     break
                 will_recommend_restaurants.append(new_recommend_restaurant)
-
+    
     @_hello_decorator
     def ask_user_favorite(self):
         """Collect favorite restaurant information from users."""
@@ -81,7 +80,7 @@ class RestaurantRobot(Robot):
             if restaurant:
                 self.ranking_model.increment(restaurant)
                 break
-
+    
     @_hello_decorator
     def thank_you(self):
         """Show words of appreciation to users."""

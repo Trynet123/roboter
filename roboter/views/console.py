@@ -31,10 +31,10 @@ def find_template(temp_file):
     """Find for template file in the given location.
 
     Returns:
-        str: The template file path
-
+        str: The template path
+    
     Raises:
-        NoTemplateError: If the file does not exists.
+        NoTemplateError: If the file does not extists.
     """
     template_dir_path = get_template_dir_path()
     temp_file_path = os.path.join(template_dir_path, temp_file)
@@ -42,14 +42,13 @@ def find_template(temp_file):
         raise NoTemplateError('Could not find {}'.format(temp_file))
     return temp_file_path
 
-
 def get_template(template_file_path, color=None):
     """Return the path of the template.
 
     Args:
-        template_file_path(str): The template file path
+        template_file_path (str): The template file path
         color: (str): Color formatting for output in terminal
-            see in more details: https://pypi.python.org/pypi/termcolor
+            See in more details: https://pypi.python.org/pypi/termcolor
 
     Returns:
         string.Template: Return templates with characters in templates.

@@ -1,4 +1,4 @@
-私のオススメのレストランは$restaurantです
+私のオススメのレストランは$restaurantです。
 I recommend you $restaurant restaurant.
 
 このレストランは好きですか？[Yes/No]
