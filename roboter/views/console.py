@@ -4,7 +4,6 @@ import string
 
 import termcolor
 
-
 def get_template_dir_path():
     """Return the path of the template's directory.
 
@@ -22,13 +21,11 @@ def get_template_dir_path():
     if not template_dir_path:
         base_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
         template_dir_path = os.path.join(base_dir, 'templates')
-
+    
     return template_dir_path
-
 
 class NoTemplateError(Exception):
     """No Template Error"""
-
 
 def find_template(temp_file):
     """Find for template file in the given location.
@@ -50,9 +47,9 @@ def get_template(template_file_path, color=None):
     """Return the path of the template.
 
     Args:
-        template_file_path (str): The template file path
+        template_file_path(str): The template file path
         color: (str): Color formatting for output in terminal
-            See in more details: https://pypi.python.org/pypi/termcolor
+            see in more details: https://pypi.python.org/pypi/termcolor
 
     Returns:
         string.Template: Return templates with characters in templates.
