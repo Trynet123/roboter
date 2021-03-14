@@ -1,2 +1,2 @@
 $user_nameさん。ありがとうございました。
-$user_name, thank you so much.
+$user_name, thank you so much!

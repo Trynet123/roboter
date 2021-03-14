@@ -29,7 +29,7 @@ class RankingModel(CsvModel):
         self.column = [RANKING_COLUMN_NAME, RANKING_COLUMN_COUNT]
         self.data = collections.defaultdict(int)
         self.load_data()
-    
+
     def get_csv_file_path(self):
         """Set csv file path.
 
@@ -78,22 +78,22 @@ class RankingModel(CsvModel):
 
         Args:
             not_list (list): Excludes the name on the list.
-
+        
         Returns:
             str: Returns the data of the top most ranking
         """
         if not_list is None:
             not_list = []
-
+        
         if not self.data:
             return None
-
+        
         sorted_data = sorted(self.data, key=self.data.get, reverse=True)
         for name in sorted_data:
             if name in not_list:
                 continue
             return name
-
+    
     def increment(self, name):
         """Increase rank for the give name."""
         self.data[name.title()] += 1

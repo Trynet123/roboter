@@ -4,8 +4,9 @@ import string
 
 import termcolor
 
+
 def get_template_dir_path():
-    """Return the path of the template's directory.
+    """Return the path of the template's directory
 
     Returns:
         str: The template dir path.
@@ -31,16 +32,17 @@ def find_template(temp_file):
     """Find for template file in the given location.
 
     Returns:
-        str: The template path
+        str: The template file path
     
     Raises:
-        NoTemplateError: If the file does not extists.
+        NoTemplateError: If the file does not exists.
     """
     template_dir_path = get_template_dir_path()
     temp_file_path = os.path.join(template_dir_path, temp_file)
     if not os.path.exists(temp_file_path):
         raise NoTemplateError('Could not find {}'.format(temp_file))
     return temp_file_path
+
 
 def get_template(template_file_path, color=None):
     """Return the path of the template.

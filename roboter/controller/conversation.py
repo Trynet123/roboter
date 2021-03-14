@@ -1,8 +1,8 @@
-"""Controller for speaking with robot"""
+"""Controller for speaking with Robot"""
 from roboter.models import robot
 
 def talk_about_restaurant():
-    """Function to speak with robot"""
+    """Function to speak with Robot"""
     restaurant_robot = robot.RestaurantRobot()
     restaurant_robot.hello()
     restaurant_robot.recommend_restaurant()
